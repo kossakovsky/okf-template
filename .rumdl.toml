@@ -1,0 +1,12 @@
+[global]
+# No line-length rule: a paragraph here is one long line, so MD013 would flag nearly every paragraph.
+disable = ["MD013"]
+# `npm run lint` runs two rumdl processes at once, and they would share the cache.
+cache = false
+# A leading `/` anchors a path at the repo root. Keep the OKF check's NOT_IN_BUNDLE in step.
+exclude = ["/.claude"]
+
+# OKF frontmatter has a `title`, and a page still opens with its own H1. By default MD025 takes
+# that `title` for the H1 and flags the real one as a second H1 (`rumdl fmt` then demotes every heading).
+[MD025]
+front-matter-title = ""

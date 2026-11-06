@@ -1,0 +1,3 @@
+#!/bin/sh
+# The commit lands only when the Markdown lint, format and OKF checks are green on the working tree, not just the staged files.
+exec npm run --silent lint
